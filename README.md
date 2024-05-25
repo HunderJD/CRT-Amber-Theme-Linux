@@ -1,7 +1,7 @@
 # CRT-Amber-Theme-Linux
 
 
-Contient : 
+Contains : 
 
 - Grub theme, inspire by : https://github.com/Jacksaur/CRT-Amber-GRUB-Theme
 
