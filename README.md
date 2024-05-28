@@ -7,4 +7,6 @@ Contains :
 
 - Plymouth Theme
 
-- Sddm Theme 
+- Sddm Theme
+
+- MY .zshrc 
