@@ -1,4 +1,4 @@
-# CRT-Amber-Theme-Linux
+# CRT-Amber-Theme-Linux (BUG NEED TO FIX IT, DON'T UPLOAD IT)
 
 
 Contains : 
