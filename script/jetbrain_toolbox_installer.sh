@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+    echo "Installation de JetBrains Toolbox..."
+
+#JetBrain ToolBox
 TOOLBOX_URL="https://data.services.jetbrains.com/products/download?code=TB&platform=linux"
 DOWNLOAD_DIR="$HOME/Downloads"
 INSTALL_DIR="/opt/jetbrains-toolbox"
