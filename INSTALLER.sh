@@ -31,27 +31,27 @@ sudo pacman -Sy > /dev/null 2>&1 --noconfirm
 #--------------------------------------------GRUB THEME + UPDATE-----------------------------------------------------
 
 # CRT-AMBER-THEME-GRUB
-sudo rm -rf /boot/grub/themes/CRT-Amber-GRUB-Theme-master > /dev/null 2>&1
-sudo cp -r ~/CRT-Amber-Theme-Linux/CRT-Amber-GRUB-Theme-master /boot/grub/themes/CRT-Amber-GRUB-Theme-master
-sudo sed -i 's|^#\?GRUB_THEME=.*|GRUB_THEME="/boot/grub/themes/CRT-Amber-GRUB-Theme-master/theme.txt"|' /etc/default/grub
-sudo update-grub > /dev/null 2>&1
-echo "GRUB modifié"
+#sudo rm -rf /boot/grub/themes/CRT-Amber-GRUB-Theme-master > /dev/null 2>&1
+#sudo cp -r ~/CRT-Amber-Theme-Linux/CRT-Amber-GRUB-Theme-master /boot/grub/themes/CRT-Amber-GRUB-Theme-master
+#sudo sed -i 's|^#\?GRUB_THEME=.*|GRUB_THEME="/boot/grub/themes/CRT-Amber-GRUB-Theme-master/theme.txt"|' /etc/default/grub
+#sudo update-grub > /dev/null 2>&1
+#echo "GRUB modifié"
 
 # CRT-AMBER-THEME-PLYMOUTH
-sudo pacman -Sy plymouth --noconfirm > /dev/null 2>&1
-sudo cp -r ~/CRT-Amber-Theme-Linux/CRT-Amber-Plymouth-Theme /usr/share/plymouth/themes
-sudo plymouth-set-default-theme CRT-Amber-Plymouth-Theme -R
-sudo mkinitcpio -P
-echo "Plymouth modifié"
+#sudo pacman -Sy plymouth --noconfirm > /dev/null 2>&1
+#sudo cp -r ~/CRT-Amber-Theme-Linux/CRT-Amber-Plymouth-Theme /usr/share/plymouth/themes
+#sudo plymouth-set-default-theme CRT-Amber-Plymouth-Theme -R
+#sudo mkinitcpio -P
+#echo "Plymouth modifié"
 
 
 #CRT-AMBER-THEME-SSDM
-sudo pacman -Sy sddm --noconfirm > /dev/null 2>&1
-sudo cp -r ~/CRT-Amber-Theme-Linux/simplicity /usr/share/sddm/themes/simplicity   #CRT-AMBER-THEME-SDDM
-sudo rm -f /etc/sddm.conf
-echo "[Theme]" | sudo tee /etc/sddm.conf
-echo "Current=simplicity" | sudo tee -a /etc/sddm.conf
-echo "sddm updated"
+#sudo pacman -Sy sddm --noconfirm > /dev/null 2>&1
+#sudo cp -r ~/CRT-Amber-Theme-Linux/simplicity /usr/share/sddm/themes/simplicity   #CRT-AMBER-THEME-SDDM
+#sudo rm -f /etc/sddm.conf
+#echo "[Theme]" | sudo tee /etc/sddm.conf
+#echo "Current=simplicity" | sudo tee -a /etc/sddm.conf
+#echo "sddm updated"
 
 
 
@@ -97,9 +97,9 @@ echo "alias wireshark='sudo wireshark'" >> ~/.zshrc
 
 
 #--------------------------------TOOLS----------------------------------
-sudo pacman -Sy nmap > /dev/null 2>&1 --noconfirm
-sudo pacman -Sy wireshark-qt > /dev/null 2>&1 --noconfirm
-sudo pacman -Sy metasploit > /dev/null 2>&1 --noconfirm
+#sudo pacman -Sy nmap > /dev/null 2>&1 --noconfirm
+#sudo pacman -Sy wireshark-qt > /dev/null 2>&1 --noconfirm
+#sudo pacman -Sy metasploit > /dev/null 2>&1 --noconfirm
 
 
 
@@ -109,27 +109,36 @@ sudo pacman -Sy metasploit > /dev/null 2>&1 --noconfirm
 echo "Discord Installation"
 sudo pacman -Sy discord > /dev/null 2>&1 --noconfirm
 
-#firefox 
-echo "Firefox Installation (pas implementé)
+#brave
+echo "Brave Browser Installation"
+sudo pacman -Sy brave-browser > /dev/null 2>&1 --noconfirm
 
 
-#wine
-echo "Wine Installation"
-sudo pacman -Syu wine > /dev/null 2>&1 --noconfirm
+#JetBrain ToolBox
+echo "jetBrains ToolBox Installation"
+TOOLBOX_SCRIPT="./scripts/install_jetbrains_toolbox.sh"
+if [ -f "$TOOLBOX_SCRIPT" ]; then
+    bash "$TOOLBOX_SCRIPT"
+else
+    echo "Erreur : Le script $TOOLBOX_SCRIPT n'existe pas."
+    exit 1
+fi
 
-echo "VS Code Installation"
-sudo snap install code --classic > /dev/null 2>&1 --noconfirm 
-
-
-#--------------------------------REBOOT----------------------------------
-echo "restart ? (y/n)"
+#--------------------------------HyperLand-----------------------------------
+echo "Voulez-vous installer Hyprland ? (y/n)"
 read -rsn1 choice
 
 if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
-    echo "restart in progress..."
-    sudo reboot
+    echo "Installation de Hyprland en cours..."
+    
+    git clone --depth=1 https://github.com/JaKooLit/Arch-Hyprland.git ~/Arch-Hyprland
+    cd ~/Arch-Hyprland
+    chmod +x install.sh
+    ./install.sh
+
+    echo "Hyprland a été installé avec succès."
 elif [ "$choice" = "n" ] || [ "$choice" = "N" ]; then
-    echo "Restart later to apply updates."
+    echo "Installation annulée. Hyprland ne sera pas installé."
 else
     echo "Choix invalide. Veuillez saisir 'y' pour Oui ou 'n' pour Non."
 fi
