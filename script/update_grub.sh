@@ -3,8 +3,6 @@
 # Définir le chemin du projet à partir du script courant
 PROJECT_DIR=$(dirname "$(realpath "$0")")/..
 
-echo "Configuration de GRUB..."
-
 # Copier le thème GRUB
 THEME_DIR="$PROJECT_DIR/CRT-Amber-GRUB-Theme-master"
 if [ -d "$THEME_DIR" ]; then

@@ -3,7 +3,7 @@
 # Définir le chemin du projet à partir du script courant
 PROJECT_DIR=$(dirname "$(realpath "$0")")/..
 
-echo "Installation et configuration de ZSH..."
+
 
 # Installer ZSH si nécessaire
 if ! command -v zsh &>/dev/null; then

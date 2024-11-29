@@ -7,7 +7,7 @@ Contains :
 
 - Plymouth Theme
 
-- Sddm Theme
+-need to implement Sddm Theme
 
 - need to implment swaylock fallout theme
 

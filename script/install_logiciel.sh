@@ -16,7 +16,6 @@ echo "Brave Browser installé."
 # JetBrains Toolbox
 JETBRAIN_SCRIPT="$SCRIPT_DIR/jetbrain_toolbox_installer.sh"
 if [ -f "$JETBRAIN_SCRIPT" ]; then
-    echo "Installation de JetBrains Toolbox..."
     bash "$JETBRAIN_SCRIPT"
 else
     echo "Erreur : Le script d'installation de JetBrains Toolbox est introuvable dans $JETBRAIN_SCRIPT."

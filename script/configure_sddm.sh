@@ -3,8 +3,6 @@
 # Définir le chemin du projet à partir du script courant
 PROJECT_DIR=$(dirname "$(realpath "$0")")/..
 
-echo "Configuration de SDDM..."
-
 # Installer SDDM si nécessaire
 sudo pacman -Sy sddm --noconfirm >/dev/null 2>&1
 
