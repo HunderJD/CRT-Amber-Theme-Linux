@@ -20,10 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
 #add alias
 alias cl='clear'
-alias getIp="grep -E -o '([0-9]{1,3}\.){3}[0-9]{1,3}'"
-alias getIPAwk='awk / for/ {print $5, $NF}'
 alias wireshark='sudo wireshark'
-
 
 #-------------------------------------Modif------------------------------
 clear

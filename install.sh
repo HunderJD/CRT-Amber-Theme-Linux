@@ -39,12 +39,12 @@ echo "Configuration de Plymouth..."
 bash "$SCRIPT_DIR/configure_plymouth.sh"
 
 # ------------------------- 5. Installation et configuration de Kitty -------------------------
-#echo "Configuration de Kitty..."
-#bash "$SCRIPT_DIR/configure_kitty.sh"
+echo "Configuration de Kitty..."
+bash "$SCRIPT_DIR/configure_kitty.sh"
 
 # ------------------------- 6. Installation et configuration de ZSH -------------------------
-#echo "Configuration de ZSH..."
-#bash "$SCRIPT_DIR/configure_zsh.sh"
+echo "Configuration de ZSH..."
+bash "$SCRIPT_DIR/configure_zsh.sh"
 
 # ------------------------- 7. Installation des outils -------------------------
 #echo "Installation des outils..."
