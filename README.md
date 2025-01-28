@@ -11,7 +11,6 @@ Contains :
 
 - need to implment swaylock fallout theme
 
-- MY .zshrc 
 
 - Fallout PipBoy New Vegas theme for kitty terminal :
 
